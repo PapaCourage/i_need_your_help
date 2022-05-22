@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 03</title>
+	<style>
+		div {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			margin: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+
+	<script>
+		/*
+      Задание:
+      Реализуйте сценарий, который при нажатии на клавиши 1, 2 или 3 на клавиатуре будет добавлять рамку
+      красного цвета на соответствующий div. Если зажаты клавиши Ctrl + A, то красная рамка добавляется сразу
+      для всех div
+        */
+		let divArr = document.querySelectorAll('div');
+		document.addEventListener('keydown', function (e) {
+			switch (e.code) {
+				case "Digit1":
+					setBorder(0);
+					break;
+				case "Digit2":
+					setBorder(1);
+					break;
+				case "Digit3":
+					setBorder(2);
+					break;
+				case "KeyA && ControlLeft": // Всього 1 питання тут. Яке тут має бути значення case? 100500 перебрав всі мимо!
+					setBorder(0);
+					setBorder(1);
+					setBorder(2);
+					break;
+			}
+		});
+
+		function setBorder(item) {
+			divArr[item].style.border = "5px solid red";
+		}
+	</script>
+</body>
+
+</html>
